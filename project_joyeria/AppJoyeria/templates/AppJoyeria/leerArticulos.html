@@ -1,0 +1,31 @@
+{% extends "AppJoyeria/base.html" %}
+{% load static %}
+{% block titulo %}Listar Articulos{% endblock titulo %}
+
+{% block contenidoQueCambia %}
+<div class="container">
+    <div class="table-container">
+        <h1>Lista de Artículos</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Material</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for a in articulos %}
+                    <tr>
+                        <td>{{ a.idArt }}</td>
+                        <td>{{ a.nomArt }}</td>
+                        <td>{{ a.precioArt }}</td>
+                        <td>{{ a.material }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock contenidoQueCambia %}

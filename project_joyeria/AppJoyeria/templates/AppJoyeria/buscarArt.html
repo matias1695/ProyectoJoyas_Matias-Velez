@@ -1,0 +1,16 @@
+{% extends "AppJoyeria/base.html" %}
+{% load static %}
+{% block titulo %}Buscar Articulos{% endblock titulo %}
+
+{% block contenidoQueCambia %}
+<div class="form-container">
+    <h1>Busqueda de Artículos</h1>
+    <form action="{% url 'buscarArticulos' %}" method="POST">
+        {% csrf_token %}
+        <table>
+            {{ mi_formulario.as_table }}
+        </table>
+        <input type="submit" value="Enviar">
+    </form>
+</div>
+{% endblock contenidoQueCambia %}
